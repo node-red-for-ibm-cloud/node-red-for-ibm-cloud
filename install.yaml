@@ -1,0 +1,36 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: node-red-operator
+  namespace: openshift-marketplace
+spec:
+  displayName: node-red-operator
+  image: 'quay.io/dataexplorer/nodered:1'
+  publisher: ibm-edge
+  sourceType: grpc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-node-red
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: operatorgroup
+  namespace: my-node-red
+spec:
+  targetNamespaces:
+  - my-node-red
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: my-node-red
+  namespace: my-node-red
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: node-red-operator
+  source: node-red-operator
+  sourceNamespace: openshift-marketplace
