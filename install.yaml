@@ -5,7 +5,7 @@ metadata:
   namespace: openshift-marketplace
 spec:
   displayName: node-red-operator-sdk1x
-  image: 'quay.io/dataexplorer/node-red-sdk1-index:2-feb5'
+  image: 'quay.io/dataexplorer/node-red-sdk1-index:4-feb5'
   publisher: ibm-edge
   sourceType: grpc
 ---
