@@ -1,11 +1,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
-  name: node-red-operator
+  name: node-red-operator-sdk1x
   namespace: openshift-marketplace
 spec:
-  displayName: node-red-operator
-  image: 'quay.io/dataexplorer/nodered:1'
+  displayName: node-red-operator-sdk1x
+  image: 'quay.io/dataexplorer/node-red-sdk1-index:2-feb5'
   publisher: ibm-edge
   sourceType: grpc
 ---
@@ -31,6 +31,6 @@ metadata:
 spec:
   channel: alpha
   installPlanApproval: Automatic
-  name: node-red-operator
-  source: node-red-operator
+  name: node-red-operator-sdk1x
+  source: node-red-operator-sdk1x
   sourceNamespace: openshift-marketplace
